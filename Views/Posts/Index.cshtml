@@ -1,0 +1,23 @@
+﻿@model PagedList.IPagedList<Blog.Models.Post>
+@using PagedList;
+
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<p>
+    @if (User.IsInRole("Admin")) { 
+    @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<div id="blogs">
+
+        @Html.Partial("_Postlist", Model)
+    
+  
+</div>

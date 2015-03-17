@@ -1,0 +1,27 @@
+﻿
+<h3><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> &nbsp;Archive</h3><hr />
+
+
+
+@{ int foo = 0; }
+    @foreach (KeyValuePair<DateTime, int> item in ViewBag.archive)
+    {
+
+
+        if (@item.Key.Year != foo)
+        {
+         
+                <span class="year">
+                    @item.Key.Year
+                </span>
+
+    }
+
+
+
+<li><a class="alink" ng-click="archiveclick(@(item.Key.Year),@(item.Key.Month))" >@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(item.Key.Month)....................<span class="badge alink">@item.Value</span></a></li>
+
+            foo = @item.Key.Year;
+
+            }
+       

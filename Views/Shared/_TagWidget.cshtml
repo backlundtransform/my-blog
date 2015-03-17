@@ -1,0 +1,73 @@
+﻿
+<h3><span class="glyphicon glyphicon-tags" aria-hidden="true"></span> &nbsp;TAGS</h3><hr />
+
+<div ng-controller="Tagwidgetcontroller" ng-init="click()">
+    
+
+
+    <span ng-repeat="item in myData.fromServer track by  $index" class="tagmargin">
+
+        <span class="label label-{{random($index)}} fontsize">
+
+            <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  &nbsp;
+            <a class="linklabel" ng-click="tagclick(item.Name)">
+                {{item.Name }}
+            </a>
+
+            <span class="badge">{{ item.Count }}</span>
+        </span>
+    </span>
+
+</div>
+
+<script>
+    app.controller("Tagwidgetcontroller", function ($scope, $http) {
+        $scope.myData = {};
+
+            $scope.string = "";
+           
+            $scope.color = ["success", "warning", "info"];
+            $scope.random = function (index) {
+              
+                if (index % 3 === 0) {
+                    return $scope.color[2];
+
+                }
+                else if (index % 2 === 0) {
+                    return $scope.color[1];
+                }
+                else {
+                    return $scope.color[0];
+                }
+            };
+
+            $scope.$on('update', function (event, arg) {
+             
+                $scope.click();
+            });
+
+            $scope.click = function () {
+
+                var serviceURL = '@Url.Action("TagWidget", "Posts")';
+
+                var postData = {};
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
+
+                     $scope.myData.fromServer = data.Result;
+                   
+
+                 }).
+                 error(function (data, status, headers, config) {
+                     alert(data);
+                 });
+            }
+
+       
+      
+        }
+
+            );
+
+
+</script>

@@ -1,0 +1,139 @@
+﻿@model Blog.Models.Comment
+
+@{Layout = ""; }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Leave a reply</title>
+    @Scripts.Render("~/bundles/jquery")
+    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+    <script type="text/javascript">
+
+       
+
+
+            
+            tinymce.init({
+                selector: "textarea",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+     
+    </script>
+</head>
+<body>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Leave a reply</h4>
+            </div>			<!-- /modal-header -->
+            <div class="modal-body">
+
+
+             
+                @using (Html.BeginForm("create", "comments", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+
+                         
+                                @Html.Hidden("PostId", Model.PostId.Id)
+                                @Html.Hidden("ParentId", Model.ParentId)
+                                @Html.TextAreaFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                         
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                }
+            
+            
+            
+              </div>			<!-- /modal-body -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+               
+            </div>			<!-- /modal-footer -->
+        </div>         <!-- /modal-content -->
+    </div>     <!-- /modal-dialog -->
+</body>
+@Scripts.Render("~/bundles/bootstrap")
+</html>
+
+
+
+
+
+
+@*@model Blog.Models.Comment
+           @{Layout = ""; }
+<html>
+<head>
+   
+  
+    
+
+   
+</head>
+<body>
+    <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinymce.init({
+            selector: "textarea",
+            plugins: [
+                "advlist autolink lists link image charmap print preview anchor",
+                "searchreplace visualblocks code fullscreen",
+                "insertdatetime media table contextmenu paste"
+            ],
+            toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+        });
+    </script>
+
+    <div class="well">
+        <h4>Leave a Comment:</h4>
+        @using (Html.BeginForm("create", "comments", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+
+                    <div class="col-md-10">
+                        @Html.Hidden("PostId", Model.PostId.Id)
+                        @Html.Hidden("ParentId", Model.ParentId)
+                        @Html.TextAreaFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        }
+    </div>
+    <hr>
+
+
+</body>
+@Scripts.Render("~/bundles/bootstrap")
+</html>*@

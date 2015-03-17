@@ -1,0 +1,27 @@
+﻿@model Blog.Models.Post
+
+
+<div ng-controller="Tagcontroller" ng-init="myData.OnInit(@Model.Id)">
+
+
+    Add Tag: <input type="text" name="@Model.Id" ng-model="string">
+
+
+    <button class="btn" type="button" ng-click="myData.add(@Model.Id, string)">Add <i class="icon-plus"></i></button>
+    <br />
+
+    <span ng-repeat="item in myData.fromServer track by  item.Id">
+
+
+        <span class="label label-{{random(item.Id)}}">
+            <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>  &nbsp;
+            <a class="linklabel" ng-click="tagclick(item.Name)">
+
+                {{item.Name }}
+            </a>
+
+            &nbsp;&nbsp;<span class="glyphicon glyphicon-remove linklabel" aria-hidden="true" ng-click="myData.remove(item.Id,@Model.Id)"></span>
+        </span> &nbsp;
+    </span>
+</div>
+

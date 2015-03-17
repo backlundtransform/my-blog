@@ -1,0 +1,98 @@
+﻿@model Blog.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+
+<script type="text/javascript">
+    tinymce.init({
+        selector: "h1.editable",
+        inline: true,
+        toolbar: "undo redo",
+        menubar: false
+    });
+
+    tinymce.init({
+        selector: "div.editable",
+        inline: true,
+        plugins: [
+            "advlist autolink lists link image charmap print preview anchor",
+            "searchreplace visualblocks code fullscreen",
+            "insertdatetime media table contextmenu paste"
+        ],
+        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    });
+</script>
+
+<br />
+
+<div class="title">@Model.Name </div><div style='clear:both'></div>
+
+<div class="blog">
+
+    <div class="body">
+        @Html.Raw(Model.Text)
+    </div>
+
+    <div class="well">
+        Added by:  @Html.DisplayFor(modelItem => Model.Authour.FirstName) |Date:  @Model.DateAdded.ToString("MMMM dd, yyyy") | Last edited:   @Model.LastEdit.ToString("MMMM dd, yyyy")
+    </div>
+    @if (User.IsInRole("Admin"))
+    {
+
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) <br />
+
+        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
+
+    }
+</div>
+
+@Html.ActionLink("Back to List", "Index")
+</p>
+@using PagedList;
+
+@using PagedList.Mvc;
+@Html.Partial("_Commentlist", Model.Comments.OrderByDescending(s => s.DateAdded).ToPagedList(Convert.ToInt16(ViewData["Page"]), 5))
+
+@if (User.Identity.IsAuthenticated)
+{
+    @Html.Partial("_Commentform", new Blog.Models.Comment() { PostId = Model, ParentId = 0 })
+} 
+
+
+
+
+
+    <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog-center">
+            <div class="modal-content">
+                @*@Html.Partial("_Commentform", new Blog.Models.Comment() { PostId = Model, ParentId = 0 })*@
+                <textarea></textarea>
+{{myForm}}
+            </div>
+        </div>
+    </div>
+  
+
+
+@section scripts 
+{
+    <script>
+        $(document).ready(function () {
+            
+           
+
+            tinymce.init({
+                selector: "textarea",
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
+        });
+    </script>
+}

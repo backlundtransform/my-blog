@@ -1,0 +1,256 @@
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.dll.config
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Blog.pdb
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Antlr3.Runtime.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\EntityFramework.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\EntityFramework.SqlServer.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Google.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Web.Infrastructure.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Newtonsoft.Json.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Owin.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Helpers.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Mvc.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Optimization.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Razor.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.WebPages.Deployment.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.WebPages.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.WebPages.Razor.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\WebGrease.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Helpers.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Mvc.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Optimization.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.Razor.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.WebPages.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.WebPages.Deployment.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\System.Web.WebPages.Razor.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Antlr3.Runtime.pdb
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Newtonsoft.Json.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\EntityFramework.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\EntityFramework.SqlServer.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Google.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.dll
+c:\users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.pdb
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\PagedList.dll
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\PagedList.Mvc.dll
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\PagedList.xml
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\bin\PagedList.Mvc.xml
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.Migrations.blog.resources
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.csproj.GenerateResource.Cache
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.Migrations.tags.resources
+C:\Users\deltagare\documents\visual studio 2013\Projects\Blog\Blog\obj\Debug\Blog.Migrations.like.resources
+I:\Ny mapp\Blog\Blog\bin\Blog.dll.config
+I:\Ny mapp\Blog\Blog\bin\Blog.dll
+I:\Ny mapp\Blog\Blog\bin\Blog.pdb
+I:\Ny mapp\Blog\Blog\bin\Antlr3.Runtime.dll
+I:\Ny mapp\Blog\Blog\bin\EntityFramework.dll
+I:\Ny mapp\Blog\Blog\bin\EntityFramework.SqlServer.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Google.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.dll
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Web.Infrastructure.dll
+I:\Ny mapp\Blog\Blog\bin\Newtonsoft.Json.dll
+I:\Ny mapp\Blog\Blog\bin\Owin.dll
+I:\Ny mapp\Blog\Blog\bin\PagedList.dll
+I:\Ny mapp\Blog\Blog\bin\PagedList.Mvc.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.Helpers.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.Mvc.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.Optimization.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.Razor.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Deployment.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.dll
+I:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Razor.dll
+I:\Ny mapp\Blog\Blog\bin\WebGrease.dll
+I:\Ny mapp\Blog\Blog\bin\PagedList.xml
+I:\Ny mapp\Blog\Blog\bin\PagedList.Mvc.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.Helpers.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.Mvc.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.Optimization.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.Razor.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Deployment.xml
+I:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Razor.xml
+I:\Ny mapp\Blog\Blog\bin\Antlr3.Runtime.pdb
+I:\Ny mapp\Blog\Blog\bin\Newtonsoft.Json.xml
+I:\Ny mapp\Blog\Blog\bin\EntityFramework.xml
+I:\Ny mapp\Blog\Blog\bin\EntityFramework.SqlServer.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Google.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.xml
+I:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.blog.resources
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.tags.resources
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.like.resources
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.csproj.GenerateResource.Cache
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.dll
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.pdb
+G:\Ny mapp\Blog\Blog\bin\Blog.dll.config
+G:\Ny mapp\Blog\Blog\bin\Blog.dll
+G:\Ny mapp\Blog\Blog\bin\Blog.pdb
+G:\Ny mapp\Blog\Blog\bin\Antlr3.Runtime.dll
+G:\Ny mapp\Blog\Blog\bin\EntityFramework.dll
+G:\Ny mapp\Blog\Blog\bin\EntityFramework.SqlServer.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Google.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.dll
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Web.Infrastructure.dll
+G:\Ny mapp\Blog\Blog\bin\Newtonsoft.Json.dll
+G:\Ny mapp\Blog\Blog\bin\Owin.dll
+G:\Ny mapp\Blog\Blog\bin\PagedList.dll
+G:\Ny mapp\Blog\Blog\bin\PagedList.Mvc.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.Helpers.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.Mvc.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.Optimization.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.Razor.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Deployment.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.dll
+G:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Razor.dll
+G:\Ny mapp\Blog\Blog\bin\WebGrease.dll
+G:\Ny mapp\Blog\Blog\bin\PagedList.xml
+G:\Ny mapp\Blog\Blog\bin\PagedList.Mvc.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.Helpers.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.Mvc.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.Optimization.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.Razor.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Deployment.xml
+G:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Razor.xml
+G:\Ny mapp\Blog\Blog\bin\Antlr3.Runtime.pdb
+G:\Ny mapp\Blog\Blog\bin\Newtonsoft.Json.xml
+G:\Ny mapp\Blog\Blog\bin\EntityFramework.xml
+G:\Ny mapp\Blog\Blog\bin\EntityFramework.SqlServer.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Google.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.xml
+G:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.blog.resources
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.tags.resources
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.like.resources
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.csproj.GenerateResource.Cache
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.dll
+G:\Ny mapp\Blog\Blog\obj\Debug\Blog.pdb
+F:\Ny mapp\Blog\Blog\bin\Blog.dll.config
+F:\Ny mapp\Blog\Blog\bin\Blog.dll
+F:\Ny mapp\Blog\Blog\bin\Blog.pdb
+F:\Ny mapp\Blog\Blog\bin\Antlr3.Runtime.dll
+F:\Ny mapp\Blog\Blog\bin\EntityFramework.dll
+F:\Ny mapp\Blog\Blog\bin\EntityFramework.SqlServer.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Google.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Web.Infrastructure.dll
+F:\Ny mapp\Blog\Blog\bin\Newtonsoft.Json.dll
+F:\Ny mapp\Blog\Blog\bin\Owin.dll
+F:\Ny mapp\Blog\Blog\bin\PagedList.dll
+F:\Ny mapp\Blog\Blog\bin\PagedList.Mvc.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.Helpers.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.Mvc.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.Optimization.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.Razor.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Deployment.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.dll
+F:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Razor.dll
+F:\Ny mapp\Blog\Blog\bin\WebGrease.dll
+F:\Ny mapp\Blog\Blog\bin\PagedList.xml
+F:\Ny mapp\Blog\Blog\bin\PagedList.Mvc.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.Helpers.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.Mvc.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.Optimization.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.Razor.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Deployment.xml
+F:\Ny mapp\Blog\Blog\bin\System.Web.WebPages.Razor.xml
+F:\Ny mapp\Blog\Blog\bin\Antlr3.Runtime.pdb
+F:\Ny mapp\Blog\Blog\bin\Newtonsoft.Json.xml
+F:\Ny mapp\Blog\Blog\bin\EntityFramework.xml
+F:\Ny mapp\Blog\Blog\bin\EntityFramework.SqlServer.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Google.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Ny mapp\Blog\Blog\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.csprojResolveAssemblyReference.cache
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.blog.resources
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.tags.resources
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.like.resources
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.csproj.GenerateResource.Cache
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.dll
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.pdb
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.nested.resources
+F:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.comment.resources
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.nested.resources
+I:\Ny mapp\Blog\Blog\obj\Debug\Blog.Migrations.comment.resources

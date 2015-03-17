@@ -1,0 +1,67 @@
+﻿@model Blog.Models.Comment
+
+<div ng-controller="Commentcontroller" ng-init="init(@Model.Id)">
+
+    <div class="media  comment">
+        <div style="float:left">
+            <a class="pull-left" href="#">
+                <img class="media-object com-avatar" src="http://placehold.it/64x64" alt="">
+            </a>
+        </div>
+
+        <h4 class="media-heading">
+            By:   @Html.DisplayFor(modelItem => Model.User.FirstName)
+        </h4>
+
+        @if (Model.CanEdit(Model.User.Id))
+        {
+
+            <div class="media-body bubble">
+
+                <div id="editor@(Model.Id)" class="media-text editable glyphicon glyphicon-edit">  @Html.Raw(Model.Text)</div>
+            </div>
+            <br />
+            <button class="btn btn-success" type="button" ng-click="myData.edit(@Model.Id)">Update <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> </button>
+
+            <button class="btn btn-danger" type="button" ng-click="myData.delete(@Model.Id)">
+                Delete
+                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+            </button>
+
+        }
+        else
+        {
+            <div class="bubble">
+
+                <div class="media-text">  @Html.Raw(Model.Text)</div>
+            </div>
+
+        }
+        @if (User.Identity.IsAuthenticated)
+        {
+
+
+            <a data-toggle="modal" ng-click="reply(@(Model.Id))" class="btn btn-primary"  data-target="#myModal">Reply<span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span> </a>
+
+   
+
+   
+
+    @*href="@(Url.Action("commentform", "Posts"))?postid=@(Model.PostId.Id)&parentid=@(Model.Id)"*@
+        }
+        <span class="glyphicon glyphicon-thumbs-up like" ng-click="myData.like(@Model.Id, true)" aria-hidden="true" ng-model="like">{{ like  }}</span>
+        <span class="glyphicon glyphicon-thumbs-down dislike" ng-click="myData.dislike(@Model.Id, true)" aria-hidden="true" ng-model="dislike">{{ dislike }}</span>
+        <div style="float:right">Added on: @Html.DisplayFor(modelItem => Model.DateAdded)</div>
+        @if (Model.GetReply(Model.Id) != null)
+        {
+            <div>
+                <ul>
+                    @foreach (Blog.Models.Comment c in Model.GetReply(Model.Id))
+                    {
+                        <li class="comment">@Html.Partial("_commentchildren", c)</li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+</div>
