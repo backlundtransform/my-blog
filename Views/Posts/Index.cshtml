@@ -4,15 +4,13 @@
 @using PagedList.Mvc;
 
 
-@{
-    ViewBag.Title = "Index";
-}
 
 
 
 <p>
     @if (User.IsInRole("Admin")) { 
-    @Html.ActionLink("Create New", "Create")
+        <br />
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
     }
 </p>
 <div id="blogs">

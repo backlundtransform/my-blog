@@ -203,7 +203,12 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\avatar1.png" />
+    <Content Include="Content\images\avatar2.png" />
+    <Content Include="Content\images\avatar3.png" />
+    <Content Include="Content\images\avatar4.png" />
+    <Content Include="Content\images\avatar5.png" />
+    <Content Include="Content\images\avatar6.png" />
     <Content Include="Content\images\blog-coffee.jpg" />
     <Content Include="Content\images\blog.jpg" />
     <Content Include="Content\images\noavatar92.png" />
@@ -999,7 +1004,6 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\JavaScript.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -1320,7 +1324,6 @@
     <Content Include="Views\Shared\_Archive.cshtml" />
     <Content Include="Views\Shared\_Commentwidget.cshtml" />
     <Content Include="Views\Posts\_commentchildren.cshtml" />
-    <Content Include="Views\Posts\ReplyCommentForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Controllers\fonts\glyphicons-halflings-regular.woff" />

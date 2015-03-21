@@ -6,6 +6,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Blog.Models;
+using System;
 
 
 
@@ -60,5 +61,9 @@ namespace Blog.Models
         public DbSet<Post> Blogs { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Comment> Comments { get; set; }
+
+    
     }
+
+    
 }

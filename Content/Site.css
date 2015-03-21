@@ -149,6 +149,10 @@ textarea
   
 }
 
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 
 .year{
      
@@ -231,6 +235,10 @@ li > .badge {
 .fontsize { font-size:15px; padding:5px; 
 }
 
+
+
+
+
 .title {
 
  border-radius: 10px;
@@ -240,13 +248,20 @@ font-size: 2em;
 font-weight: normal;
 line-height: 46px;
 margin: 0 0 5px;
-padding: 5px 30px;
+
 color:#ffffff;
 width:100%;
+padding-left: 75px;
 }
     .title a { color:#ffffff;
                padding-left: 50px;
     }
+
+ .title > .authour{
+
+    color:#9c9c9c;
+   font-size:12px;
+}
 
 .blog {
   background-color: #ececec;
@@ -260,11 +275,13 @@ width:100%;
   margin-bottom:40px;
   margin-top:8px;
 }
-
+.addtag {
+    width: 40%;
+}
 
 .comment {
 
-   -moz-border-radius:3px;-moz-box-shadow:0 1px 2px #bababa;-webkit-border-radius:3px;-webkit-box-shadow:0 1px 2px #bababa;
+   
    padding:20px;
 }
 

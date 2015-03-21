@@ -40,8 +40,9 @@
                         </form>
                     </li>
                 </ul>
-
+              
                 @Html.Partial("_LoginPartial")
+               
             </div>
         </div>
     </div>
@@ -53,12 +54,12 @@
         <div class="col-md-7 col-sm-7">
             <div id="myid">
 
-                <img src="~/Content/images/blog-coffee.jpg" class="img-thumbnail" />
+                <img src="~/Content/images/blog-coffee.jpg" class="img-thumbnail" /><br />
                 @RenderBody()
             </div>
         </div>
         <div class="col-md-3 col-sm-3">
-            @if (ViewContext.RouteData.Values["Controller"].Equals("Posts"))
+            @if (ViewContext.RouteData.Values["Controller"].ToString().ToLower().Equals("posts"))
             {
                 <div class="widget">@Html.Partial("_TagWidget")</div><div class="widget">@Html.Partial("_Archive")</div><div class="widget">@Html.Partial("_Commentwidget")</div>
             }
@@ -74,164 +75,161 @@
     @RenderSection("scripts", required: false)
 
     <script>
-    app.controller("MainController", function ($scope, $http) {
-        $scope.child = {};
-        $scope.myForm =""
+        app.controller("MainController", function ($scope, $http) {
+            $scope.child = {};
+            $scope.myForm = ""
 
-        $scope.reply = function (parentid) {
+            $scope.reply = function (parentid) {
 
-            
+                $scope.myForm = parentid;
 
-            $scope.myForm = parentid;
+            }
+            $scope.onResponse = function (data) {
 
-        }
-        $scope.onResponse = function (data) {
+                var element = document.getElementById('blogs');
+                element.innerHTML = data.data;
 
-            var element = document.getElementById('blogs');
-            element.innerHTML = data.data;
+                var injector = $('[ng-app]').injector();
+                var $compile = injector.get('$compile');
+                $compile(document.getElementById('blogs'))($scope);
+            }
 
-            var injector = $('[ng-app]').injector();
-            var $compile = injector.get('$compile');
-            $compile(document.getElementById('blogs'))($scope);
-        }
+            $scope.onFormSub = function (searchStr) {
 
-        $scope.onFormSub = function (searchStr) {
+                var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()";
+                var view = "@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()";
 
-            var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()";
-            var view = "@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()";
+                if (controller === "Posts" && view === "Index") {
 
-            if (controller === "Posts" && view === "Index") {
+                    $http.get("/Posts/GetPartialIndex/?search=" + searchStr).then($scope.onResponse);
 
-                $http.get("/Posts/GetPartialIndex/?search=" + searchStr).then($scope.onResponse);
+                } else {
 
-            } else {
+                    window.location.href = "/Posts/Index?search=" + searchStr;
 
-                window.location.href = "/Posts/Index?search=" + searchStr;
+                }
+
+            };
+
+            $scope.tagclick = function (searchStr) {
+
+                var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()";
+                var view = "@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()";
+
+                if (controller === "Posts" && view === "Index") {
+
+                    $http.get("/Posts/GetPartialIndex/?tag=" + searchStr).then($scope.onResponse);
+
+                } else {
+
+                    window.location.href = "/Posts/Index?tag=" + searchStr;
+
+                }
+            };
+
+            $scope.archiveclick = function (year, month) {
+
+                var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()";
+                var view = "@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()";
+
+                if (controller === "Posts" && view === "Index") {
+
+                    $http.get("/Posts/GetPartialIndex/?year=" + year + "&month=" + month).then($scope.onResponse);
+
+                } else {
+
+                    window.location.href = "/Posts/Index?tag=" + year + "&month=" + month;
+
+                }
+            };
+        });
+
+        app.controller("Tagcontroller", function ($rootScope, $scope, $http) {
+
+            $scope.string = "";
+            $scope.myData = {};
+
+            $scope.myData.goto = function (tag) {
+                var serviceURL = '@Url.Action("index", "Posts")' + '?tag=' + tag;
+                location.href = serviceURL;
 
             }
 
+            $scope.color = ["success", "warning", "info"]
+            $scope.random = function (index) {
+
+                if (index % 3 === 0) {
+                    return $scope.color[2];
+
+                }
+                else if (index % 2 === 0) {
+                    return $scope.color[1];
+                }
+                else {
+                    return $scope.color[0];
+                }
+            };
+
+            $scope.myData.remove = function (tagid, postid) {
+
+                var serviceURL = '@Url.Action("AngularTagRemove", "Posts")';
+
+                var postData = { tagid: tagid, postid: postid };
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
+
+                     $scope.myData.fromServer = data.Result;
+                     $rootScope.$broadcast('update');
+
+                 }).
+                 error(function (data, status, headers, config) {
+                     alert(data.Result);
+                 });
+            }
+
+            $scope.myData.OnInit = function (id) {
+
+                var serviceURL = '@Url.Action("AngularTagInit", "Posts")';
+
+                var postData = { id: id };
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
+
+                     $scope.myData.fromServer = data.Result;
+                 }).
+                 error(function (data, status, headers, config) {
+                     alert(data.Result);
+                 });
+            }
+            $scope.myData.add = function (id, string) {
+
+                var serviceURL = '@Url.Action("AngularTag", "Posts")';
+
+                var postData = { value: $scope.string, id: id };
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
+
+                     $scope.myData.fromServer = data.Result;
+                     $rootScope.$broadcast('update');
+                 }).
+                error(function (data, status, headers, config) {
+                    alert(data.Result);
+                });
+            }
+
+        }
+
+        );
+
+        app.controller("Commentcontroller", function ($rootScope, $scope, $http) {
+            $scope.$parent.child = $scope;
+            $scope.string = "";
+            $scope.myform = $("#myModal").attr("data-comment");
           
-        };
+            $scope.myData = {};
+            $scope.myData.delete = function (id) {
 
-        $scope.tagclick = function (searchStr) {
-
-            var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()";
-            var view = "@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()";
-
-            if (controller === "Posts" && view === "Index") {
-
-                $http.get("/Posts/GetPartialIndex/?tag=" + searchStr).then($scope.onResponse);
-
-            } else {
-
-                window.location.href = "/Posts/Index?tag=" + searchStr;
-
-            }
-        };
-
-        $scope.archiveclick = function (year, month) {
-
-            var controller = "@HttpContext.Current.Request.RequestContext.RouteData.Values["controller"].ToString()";
-            var view = "@HttpContext.Current.Request.RequestContext.RouteData.Values["action"].ToString()";
-
-            if (controller === "Posts" && view === "Index") {
-
-                $http.get("/Posts/GetPartialIndex/?year=" + year + "&month=" + month).then($scope.onResponse);
-
-            } else {
-
-                window.location.href = "/Posts/Index?tag=" + year + "&month=" + month;
-
-            }
-        };
-    });
-
-    app.controller("Tagcontroller", function ($rootScope, $scope, $http) {
-
-        $scope.string = "";
-        $scope.myData = {};
-
-        $scope.myData.goto = function (tag) {
-            var serviceURL = '@Url.Action("index", "Posts")' + '?tag=' + tag;
-            location.href = serviceURL;
-
-        }
-
-        $scope.color = ["success", "warning", "info"]
-        $scope.random = function (index) {
-
-            if (index % 3 === 0) {
-                return $scope.color[2];
-
-            }
-            else if (index % 2 === 0) {
-                return $scope.color[1];
-            }
-            else {
-                return $scope.color[0];
-            }
-        };
-
-        $scope.myData.remove = function (tagid, postid) {
-
-            var serviceURL = '@Url.Action("AngularTagRemove", "Posts")';
-
-            var postData = { tagid: tagid, postid: postid };
-            $http.post(serviceURL, postData).
-             success(function (data, status, headers, config) {
-
-                 $scope.myData.fromServer = data.Result;
-                 $rootScope.$broadcast('update');
-
-             }).
-             error(function (data, status, headers, config) {
-                 alert(data.Result);
-             });
-        }
-
-        $scope.myData.OnInit = function (id) {
-
-            var serviceURL = '@Url.Action("AngularTagInit", "Posts")';
-
-            var postData = { id: id };
-            $http.post(serviceURL, postData).
-             success(function (data, status, headers, config) {
-
-                 $scope.myData.fromServer = data.Result;
-             }).
-             error(function (data, status, headers, config) {
-                 alert(data.Result);
-             });
-        }
-        $scope.myData.add = function (id, string) {
-
-            var serviceURL = '@Url.Action("AngularTag", "Posts")';
-
-            var postData = { value: $scope.string, id: id };
-            $http.post(serviceURL, postData).
-             success(function (data, status, headers, config) {
-
-                 $scope.myData.fromServer = data.Result;
-                 $rootScope.$broadcast('update');
-             }).
-            error(function (data, status, headers, config) {
-                alert(data.Result);
-            });
-        }
-
-    }
-
-    );
-
-    app.controller("Commentcontroller", function ($rootScope, $scope, $http) {
-        $scope.$parent.child = $scope;
-        $scope.string = "";
-        $scope.myform =$("#myModal").attr("data-comment");
-        $scope.edit = false;
-        $scope.myData = {};
-        $scope.myData.delete = function (id) {
-
-            var serviceURL = '@Url.Action("delete", "Comments")' + '/' + id;
+                var serviceURL = '@Url.Action("delete", "Comments")' + '/' + id;
 
                 if (confirm("Do you really wanna delete this comment")) {
 
@@ -240,70 +238,130 @@
                 }
             }
 
-
-
             $scope.myData.edit = function (id) {
 
                 $scope.string = $("#editor" + id).html();
 
                 var serviceURL = '@Url.Action("edit", "Comments")' + '/' + id;
 
-            var postData = { id: id, text: $scope.string };
-            $http.post(serviceURL, postData).
-             success(function (data, status, headers, config) {
+                var postData = { id: id, text: $scope.string };
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
 
-                 alert("Comment been updated");
-             }).
-             error(function (data, status, headers, config) {
-                 alert("Something went wrong");
-             });
+                     alert("Comment been updated");
+                 }).
+                 error(function (data, status, headers, config) {
+                     alert("Something went wrong");
+                 });
 
             }
-        
 
-        $scope.init = function (id) {
-            $scope.myData.like(id, false);
-            $scope.myData.dislike(id, false);
+            $scope.init = function (id) {
+
+                $scope.cheater2 = false;
+                $scope.cheater1 = false;
+                $scope.myData.like(id, false);
+                $scope.myData.dislike(id, false);
+                
+            }
+
+            $scope.myData.like = function (id, like) {
+                if ($scope.cheater2) {
+                   alert("You already like this comment");
+                    }
+                else {
+                var serviceURL = '@Url.Action("like", "Comments")';
+
+                var postData = { id: id, like: like };
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
+
+                     $scope.like = data.Result;
+                     if (like) {
+                         $scope.cheater2 = true;
+                     }
+                 }).
+                 error(function (data, status, headers, config) {
+                     alert("Something went wrong");
+                 });
+                }
+            }
+
+            $scope.myData.dislike = function (id, dislike) {
+
+                if ($scope.cheater1) {
+                    alert("You already dislike this comment");
+                }
+                else {
+
+                    var serviceURL = '@Url.Action("dislike", "Comments")';
+
+                    var postData = { id: id, dislike: dislike };
+                    $http.post(serviceURL, postData).
+                     success(function (data, status, headers, config) {
+
+                         $scope.dislike = data.Result;
+                         if (dislike) {
+                             $scope.cheater1 = true;
+                         }
+
+                     }).
+                     error(function (data, status, headers, config) {
+                         alert("Something went wrong");
+                     });
+                }
+            }
+
+        });
+
+        app.controller("Tagwidgetcontroller", function ($scope, $http) {
+            $scope.myData = {};
+
+            $scope.string = "";
+
+            $scope.color = ["success", "warning", "info"];
+            $scope.random = function (index) {
+
+                if (index % 3 === 0) {
+                    return $scope.color[2];
+
+                }
+                else if (index % 2 === 0) {
+                    return $scope.color[1];
+                }
+                else {
+                    return $scope.color[0];
+                }
+            };
+
+            $scope.$on('update', function (event, arg) {
+
+                $scope.click();
+            });
+
+            $scope.click = function () {
+
+                var serviceURL = '@Url.Action("TagWidget", "Posts")';
+
+                var postData = {};
+                $http.post(serviceURL, postData).
+                 success(function (data, status, headers, config) {
+
+                     $scope.myData.fromServer = data.Result;
+
+
+                 }).
+                 error(function (data, status, headers, config) {
+                     alert(data);
+                 });
+            }
+
+
 
         }
 
+           );
 
-
-        $scope.myData.like = function (id, like) {
-
-            var serviceURL = '@Url.Action("like", "Comments")';
-
-            var postData = { id: id, like: like };
-            $http.post(serviceURL, postData).
-             success(function (data, status, headers, config) {
-
-                 $scope.like = data.Result;
-
-             }).
-             error(function (data, status, headers, config) {
-                 alert("Something went wrong");
-             });
-
-        }
-
-        $scope.myData.dislike = function (id, dislike) {
-
-            var serviceURL = '@Url.Action("dislike", "Comments")';
-
-            var postData = { id: id, dislike: dislike };
-            $http.post(serviceURL, postData).
-             success(function (data, status, headers, config) {
-
-                 $scope.dislike = data.Result;
-
-             }).
-             error(function (data, status, headers, config) {
-                 alert("Something went wrong");
-             });
-
-        }
-
-    });
     </script>
 </body>
 </html>

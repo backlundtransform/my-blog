@@ -4,31 +4,41 @@
 @using PagedList.Mvc;
 <section>
 
-    @foreach (var item in Model)
+    @foreach (Blog.Models.Post item in Model)
     {
-        <div class="title">@Html.ActionLink(item.Name, "Details", new { id = item.Id }) </div><div style='clear:both'></div>
+        <div class="title">@Html.ActionLink(item.Name, "Details", new { id = item.Id }) <span class="authour">by:  @Html.DisplayFor(modelItem => item.Authour.FirstName)</span></div><div style='clear:both'></div>
 
         <div class="blog">
+
             <p class="calendar">@item.DateAdded.Day<em>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(item.DateAdded.Month)</em></p>
-
+            
             <div class="body">
-                @Html.Raw(item.Text)
-            </div>
-            Added by:  @Html.DisplayFor(modelItem => item.Authour.FirstName)
-            <a class="btn btn-default" href="@Url.Action("details", "posts", new { id=item.Id })" role="button"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> comments @item.Comments.Count() </a>
-            <div class="well">
 
+             
+                    @Html.Raw(item.Text)
+              
+                    
+                  
+                </div>
+
+
+
+
+            <div class="well">
+                <a class="btn btn-default" href="@Url.Action("details", "posts", new { id=item.Id })" role="button"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> comments @item.Comments.Count() </a>
+                <br /><br />
                 @Html.Partial("_Angular", item)
             </div>
             @if (User.IsInRole("Admin"))
             {
-
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) <br />
-
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-
+                <div style="float:left">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-info" }) <br />
+                </div>
+    <div style="float:left">
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+    </div>
             }
-        </div>
+    </div>
 
     }
 
@@ -38,3 +48,5 @@
         page
 }))
 </section>
+
+

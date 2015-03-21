@@ -1,88 +1,138 @@
 ﻿@model Blog.Models.Post
+@using PagedList;
+
+@using PagedList.Mvc;
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Name;
 }
 
 <script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
 
-<script type="text/javascript">
-    tinymce.init({
-        selector: "h1.editable",
-        inline: true,
-        toolbar: "undo redo",
-        menubar: false
-    });
-
-    tinymce.init({
-        selector: "div.editable",
-        inline: true,
-        plugins: [
-            "advlist autolink lists link image charmap print preview anchor",
-            "searchreplace visualblocks code fullscreen",
-            "insertdatetime media table contextmenu paste"
-        ],
-        toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-    });
-</script>
 
 <br />
-
-<div class="title">@Model.Name </div><div style='clear:both'></div>
+<ol class="breadcrumb">
+    <li>@Html.ActionLink("Home", "Index")</li>
+    <li class="active">@Model.Name </li>
+</ol>
+<div class="title">@Model.Name  <span class="authour">by:  @Model.Authour.FirstName</span></div><div style='clear:both'></div>
 
 <div class="blog">
-
+    <p class="calendar">@Model.DateAdded.Day<em>@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Model.DateAdded.Month)</em></p>
     <div class="body">
         @Html.Raw(Model.Text)
-    </div>
+    </div> Added by:  @Html.DisplayFor(modelItem => Model.Authour.FirstName)
+
+    
 
     <div class="well">
-        Added by:  @Html.DisplayFor(modelItem => Model.Authour.FirstName) |Date:  @Model.DateAdded.ToString("MMMM dd, yyyy") | Last edited:   @Model.LastEdit.ToString("MMMM dd, yyyy")
+       
+
+        @Html.Partial("_Angular", Model)
     </div>
     @if (User.IsInRole("Admin"))
     {
-
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) <br />
-
-        @Html.ActionLink("Delete", "Delete", new { id = Model.Id })
-
+        <div style="float:left">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-info" }) <br />
+        </div>
+        <div style="float:left">
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" })
+        </div>
     }
 </div>
 
-@Html.ActionLink("Back to List", "Index")
-</p>
-@using PagedList;
 
-@using PagedList.Mvc;
+
+<h4>
+
+    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> @(Model.Comments.Count()) Comments
+</h4>
+<hr />
+
+
 @Html.Partial("_Commentlist", Model.Comments.OrderByDescending(s => s.DateAdded).ToPagedList(Convert.ToInt16(ViewData["Page"]), 5))
 
 @if (User.Identity.IsAuthenticated)
 {
     @Html.Partial("_Commentform", new Blog.Models.Comment() { PostId = Model, ParentId = 0 })
-} 
-
-
-
 
 
     <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog-center">
             <div class="modal-content">
-                @*@Html.Partial("_Commentform", new Blog.Models.Comment() { PostId = Model, ParentId = 0 })*@
-                <textarea></textarea>
-{{myForm}}
+                <form action="/comments/create" enctype="multipart/form-data" method="post">
+                    @Html.AntiForgeryToken()
+                    <input id="PostId" name="PostId" type="hidden" value="@(Model.Id)" />
+                    <input data-val="true" data-val-number="The field ParentId must be a number." data-val-required="The ParentId field is required." id="ParentId" name="ParentId" type="hidden" value="{{myForm}} " />
+                    <textarea name="Text" data-val="true" data-val-length="The field Text must be a string with a maximum length of 512." data-val-length-max="512" data-val-required="The Text field is required."></textarea>
+                    <span class="field-validation-valid text-danger" data-valmsg-for="Text" data-valmsg-replace="true"></span>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+                </form>
             </div>
         </div>
     </div>
-  
+}
+
+<div class="modal fade " id="AvatarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-center">
+        <div class="modal-content">
+            <h2>Change Avatar</h2>
+            @using (Html.BeginForm("Upload",
+                "Comments", new { postid = Model.Id },
+                        FormMethod.Post,
+                        new { enctype = "multipart/form-data" }))
+            {
 
 
-@section scripts 
+
+                <div class="form-group has-feedback">
+
+                    <input class="btn btn-default" type="file" name="file" id="file" />
+
+                </div>
+                <div class="form-group has-feedback">
+
+                    <input class="btn btn-default" type="submit" value="Upload Image" />
+
+                </div>
+
+
+
+                <br><br>
+
+            }
+
+        </div>
+    </div>
+</div>
+@section scripts
 {
     <script>
         $(document).ready(function () {
-            
-           
+
+
+
+            tinymce.init({
+                selector: "h1.editable",
+                inline: true,
+                toolbar: "undo redo",
+                menubar: false
+            });
+
+            tinymce.init({
+                selector: "div.editable",
+                inline: true,
+                plugins: [
+                    "advlist autolink lists link image charmap print preview anchor",
+                    "searchreplace visualblocks code fullscreen",
+                    "insertdatetime media table contextmenu paste"
+                ],
+                toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+            });
 
             tinymce.init({
                 selector: "textarea",

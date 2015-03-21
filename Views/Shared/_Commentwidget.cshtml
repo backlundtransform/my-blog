@@ -13,10 +13,26 @@
     <div>
         <div style="float:left; padding:10px">
 
-            <img src="http://placehold.it/64x64" alt="" class=" img-circle" width="35">
+            
+
+@if (item.User.Avatar == null)
+{
+    <img class=" img-circle" src='@Url.Content("~/Content/images/noavatar92.png")' width="35" height="35" />
+
+}
+else
+{
+
+    <img class=" img-circle" src="@Url.Content(item.User.Avatar)" alt="" width="35" height="35" />
+
+}
+
+
+           
 
         </div>
         <div class ="widgetbubble">  @Html.Raw(item.Text.Length >= 20 ? item.Text.Substring(0, 20) : item.Text)</div>
+        <span class="btn btn-xs">By: @item.User.FirstName  <span class="glyphicon glyphicon-time"></span>  @item.ToRelativeDate(item.DateAdded)  <a href="@(Url.Action("Details", "Posts", new {id=item.PostId.Id }))#@(item.Id)">  <i class="glyphicon glyphicon-share-alt"></i></a></span>  
 
 
 

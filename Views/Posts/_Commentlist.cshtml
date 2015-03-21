@@ -5,11 +5,7 @@
 @using PagedList.Mvc;
 
 
-<h4>
 
-    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span> @(Model.Count())Comments
-</h4>
-<hr />
 @{
     List<Blog.Models.Comment> list = Model.Where(x => x.ParentId == 0).ToList();
 }
